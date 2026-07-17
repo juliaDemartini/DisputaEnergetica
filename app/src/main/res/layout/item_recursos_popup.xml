@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="14dp"
+    android:layout_marginBottom="12dp"
+    android:background="#12384A" android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/tvPopUpPlacarNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome do Jogador"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/tvPopUpPlacarMoedas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="💰 0"
+            android:gravity="center"
+            android:textColor="#FFB300"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvPopUpPlacarEnergia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⚡ 0"
+            android:gravity="center"
+            android:textColor="#FBC02D"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvPopUpPlacarSust"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🌱 0"
+            android:gravity="center"
+            android:textColor="#4CAF50"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvPopUpPlacarPoluicao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="☣️ 0"
+            android:gravity="center"
+            android:textColor="#FF5722"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

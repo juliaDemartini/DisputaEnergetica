@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="24dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="12dp"
+    app:cardBackgroundColor="#0D3B4F">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvModalType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESAFIO ENERGÉTICO"
+                android:textColor="@color/green_border"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30s"
+                android:textColor="#FFB300"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="#20FFFFFF"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvModalEnunciado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Carregando pergunta..."
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btnOptA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Alternativa A"
+            android:textAlignment="viewStart"
+            android:backgroundTint="#1A5268"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnOptB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Alternativa B"
+            android:textAlignment="viewStart"
+            android:backgroundTint="#1A5268"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnOptC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Alternativa C"
+            android:textAlignment="viewStart"
+            android:backgroundTint="#1A5268"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnOptD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Alternativa D"
+            android:textAlignment="viewStart"
+            android:backgroundTint="#1A5268"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
