@@ -34,7 +34,7 @@ public class Jogador {
     public int getPoluicao() { return poluicao; }
     public void setPoluicao(int poluicao) { this.poluicao = poluicao; }
 
-    // 🏆 MÉTODO MÁGICO PARA O RANKING: Calcula a pontuação final de vitória
+    //MÉTODO MÁGICO PARA O RANKING: Calcula a pontuação final de vitória
     // Fórmula baseada no equilíbrio do jogo: Soma os recursos bons e subtrai a poluição
     public int getPontuacaoTotal() {
         return (this.moedas + this.energia + this.sustentabilidade) - this.poluicao;
