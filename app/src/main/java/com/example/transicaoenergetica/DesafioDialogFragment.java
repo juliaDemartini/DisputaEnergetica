@@ -134,7 +134,7 @@ public class DesafioDialogFragment extends DialogFragment {
             if (alternativaSelecionada.equalsIgnoreCase(perguntaSorteada.getRespostaCorreta())) {
                 Toast.makeText(getContext(), "Resposta CORRETA! Seus recursos subiram.", Toast.LENGTH_SHORT).show();
 
-                // 🔊 RESPOSTA CORRETA: Solta o Win.mp3
+                // RESPOSTA CORRETA: Solta o Win.mp3
                 dispararSomNoTabuleiro(true);
 
                 if (jogadorAtual != null) {
@@ -144,7 +144,7 @@ public class DesafioDialogFragment extends DialogFragment {
             } else {
                 Toast.makeText(getContext(), "Resposta ERRADA! Resposta correta era: " + perguntaSorteada.getRespostaCorreta(), Toast.LENGTH_SHORT).show();
 
-                // 🔊 RESPOSTA ERRADA: Solta o Fail.mp3
+                //RESPOSTA ERRADA: Solta o Fail.mp3
                 dispararSomNoTabuleiro(false);
             }
         } else {
@@ -155,7 +155,7 @@ public class DesafioDialogFragment extends DialogFragment {
                 // Alternativa A é ecológica, alternativa B é econômica industrial
                 if (alternativaSelecionada.equalsIgnoreCase("A")) {
 
-                    // 🔊 DECISÃO VERDE: Toca o Win.mp3 pelas boas práticas ambientais
+                    //DECISÃO VERDE: Toca o Win.mp3 pelas boas práticas ambientais
                     dispararSomNoTabuleiro(true);
 
                     int sustAtual = jogadorAtual.getSustentabilidade();
@@ -164,7 +164,7 @@ public class DesafioDialogFragment extends DialogFragment {
 
                 } else {
 
-                    // 🔊 DECISÃO POLUENTE: Toca o Fail.mp3 alertando o aumento da poluição
+                    //DECISÃO POLUENTE: Toca o Fail.mp3 alertando o aumento da poluição
                     dispararSomNoTabuleiro(false);
 
                     jogadorAtual.setMoedas(jogadorAtual.getMoedas() + 1);
@@ -177,7 +177,7 @@ public class DesafioDialogFragment extends DialogFragment {
         forçarProximoTurno();
     }
 
-    // ⚡ Ponte de áudio segura com o SoundPool do Tabuleiro
+    // Ponte de áudio segura com o SoundPool do Tabuleiro
     private void dispararSomNoTabuleiro(boolean ehSucesso) {
         if (getParentFragmentManager() != null) {
             Fragment fragment = getParentFragmentManager().findFragmentById(R.id.fragment_container);
