@@ -17,7 +17,7 @@ import androidx.fragment.app.DialogFragment;
 
 public class EditarJogadorDialogFragment extends DialogFragment {
 
-    // 🔗 Interface de Callback para devolver os dados modificados para a tela principal
+    //Interface de Callback para devolver os dados modificados para a tela principal
     public interface OnJogadorEditadoListener {
         void onJogadorSalvo(String novoNome, String novaCorHex);
     }
@@ -61,13 +61,13 @@ public class EditarJogadorDialogFragment extends DialogFragment {
         etEditarNome.setText(nomeInicial);
         ivPreviewPeao.setColorFilter(Color.parseColor(corSelecionadaHex));
 
-        // 🎨 Lógica dos cliques nos círculos coloridos (muda o preview na hora)
+        //Lógica dos cliques nos círculos coloridos (muda o preview na hora)
         btnVermelho.setOnClickListener(v -> atualizarCorPreview("#FF2E2E"));
         btnAzul.setOnClickListener(v -> atualizarCorPreview("#2E7DFF"));
         btnVerde.setOnClickListener(v -> atualizarCorPreview("#2EFF3A"));
         btnAmarelo.setOnClickListener(v -> atualizarCorPreview("#FFD42E"));
 
-        // 🟩 Ação do botão salvar
+        //Ação do botão salvar
         btnSalvar.setOnClickListener(v -> {
             String novoNome = etEditarNome.getText().toString().trim();
             if (novoNome.isEmpty()) {
