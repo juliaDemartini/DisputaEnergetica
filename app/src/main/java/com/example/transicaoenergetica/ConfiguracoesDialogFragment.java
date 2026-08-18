@@ -33,7 +33,7 @@ public class ConfiguracoesDialogFragment extends DialogFragment {
         switchMusica = view.findViewById(R.id.switchMusica);
         switchSons = view.findViewById(R.id.switchSons);
 
-        // ❌ O ID btnFecharConfig pertence ao nosso ícone X do topo direito
+        
         ImageView btnFecharConfig = view.findViewById(R.id.btnFecharConfig);
 
         MainActivity activity = (MainActivity) getActivity();
@@ -79,7 +79,7 @@ public class ConfiguracoesDialogFragment extends DialogFragment {
         return view;
     }
 
-    // ✨ FORÇA O DIÁLOGO A FICAR LARGO E ESPAÇADO NO EMULADOR
+    
     @Override
     public void onResume() {
         super.onResume();
