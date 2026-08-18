@@ -1,4 +1,4 @@
-package com.example.transicaoenergetica; // ⚠️ Ajuste se o seu pacote for diferente
+package com.example.transicaoenergetica; 
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment; // 👈 IMPORTANTE: Garante o funcionamento do .show()
+import androidx.fragment.app.DialogFragment; //IMPORTANTE: Garante o funcionamento do .show()
 import java.util.List;
 
 public class PlacarDialogFragment extends DialogFragment {
@@ -49,7 +49,7 @@ public class PlacarDialogFragment extends DialogFragment {
 
         if (listaJogadores != null) {
             for (Jogador j : listaJogadores) {
-                // 🔄 Usando o novo arquivo de layout exclusivo do pop-up
+                //Usando o novo arquivo de layout exclusivo do pop-up
                 View itemView = inflater.inflate(R.layout.item_recursos_popup, llPlacarJogadoresContainer, false);
 
                 TextView tvNome = itemView.findViewById(R.id.tvPopUpPlacarNome);
