@@ -19,7 +19,7 @@ public class MainMenuFragment extends Fragment {
     private CardView btnStartGame;
     private Button btnInstructions;
 
-    // 🔊 Controle de efeitos sonoros curtos para o Menu
+    //Controle de efeitos sonoros curtos para o Menu
     private SoundPool soundPool;
     private int somClique;
 
@@ -32,7 +32,7 @@ public class MainMenuFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_menu, container, false);
 
-        // 🔊 CONFIGURAÇÃO DO SOUNDPOOL: Carrega o som de clique na memória
+        //CONFIGURAÇÃO DO SOUNDPOOL: Carrega o som de clique na memória
         AudioAttributes attrs = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_GAME)
                 .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
@@ -48,7 +48,7 @@ public class MainMenuFragment extends Fragment {
 
         btnStartGame = view.findViewById(R.id.btnStartGame);
 
-        // ✨ Ação para o botão da engrenagem branca de configurações
+        //Ação para o botão da engrenagem branca de configurações
         ImageView btnSettings = view.findViewById(R.id.btnSettings);
         if (btnSettings != null) {
             btnSettings.setOnClickListener(v -> {
@@ -84,7 +84,7 @@ public class MainMenuFragment extends Fragment {
         return view;
     }
 
-    // ⚡ Método auxiliar para disparar o efeito sonoro de forma segura
+    //Método auxiliar para disparar o efeito sonoro de forma segura
     private void tocarSomClique() {
         if (soundPool != null) {
             soundPool.play(somClique, 1.0f, 1.0f, 1, 0, 1.0f);
