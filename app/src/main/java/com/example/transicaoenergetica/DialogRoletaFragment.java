@@ -58,7 +58,7 @@ public class DialogRoletaFragment extends DialogFragment {
         btnGirarRoleta.setEnabled(false);
         btnGirarRoleta.setText("GIRANDO...");
 
-        // 🎰 TRILHA DA ROLETA: Avisa o tabuleiro para soltar o som de giro no clique real do botão!
+        // TRILHA DA ROLETA: Avisa o tabuleiro para soltar o som de giro no clique real do botão!
         dispararEfeitoNoTabuleiro(0);
 
         // 1. Ativa o giro visual da roleta
@@ -92,7 +92,7 @@ public class DialogRoletaFragment extends DialogFragment {
             tvResultadoRoleta.setVisibility(View.VISIBLE);
             btnGirarRoleta.setText("CONCLUÍDO");
 
-            // 🎯 GATILHO DA RECOMPENSA: Toca o som baseado no item sorteado
+            //GATILHO DA RECOMPENSA: Toca o som baseado no item sorteado
             if (indiceSorteado == 3) {
                 dispararEfeitoNoTabuleiro(2); // Toca Fail.mp3 para o evento de Poluição
             } else {
@@ -121,7 +121,7 @@ public class DialogRoletaFragment extends DialogFragment {
         }, 2000);
     }
 
-    // ⚡ Ponte de áudio segura com o SoundPool do GameBoardFragment
+    //Ponte de áudio segura com o SoundPool do GameBoardFragment
     private void dispararEfeitoNoTabuleiro(int tipoSom) {
         if (getParentFragmentManager() != null) {
             Fragment tabuleiro = getParentFragmentManager().findFragmentById(R.id.fragment_container);
