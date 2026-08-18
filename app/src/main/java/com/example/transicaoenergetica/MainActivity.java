@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgPlaneta;
     private FrameLayout container;
 
-    // 📻 Tocador de áudio principal do jogo
+    //Tocador de áudio principal do jogo
     private MediaPlayer tocadorMusica;
 
     @Override
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        // 🎵 COMEÇA A MÚSICA 1 (MENU/SETUP) LOGO NA INICIALIZAÇÃO
+        //COMEÇA A MÚSICA 1 (MENU/SETUP) LOGO NA INICIALIZAÇÃO
         trocarMusicaGlobal(R.raw.musica_menu);
 
         imgPlaneta = findViewById(R.id.imgPlanetaGirando);
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         }, 2500);
     }
 
-    // 🔄 MÉTODO GLOBAL MODIFICADO: Só toca música de fundo se o switch de música estiver ativado
+    //MÉTODO GLOBAL MODIFICADO: Só toca música de fundo se o switch de música estiver ativado
     public void trocarMusicaGlobal(int arquivoAudioRaw) {
         // Se já tem alguma música tocando, para ela e limpa a memória
         if (tocadorMusica != null) {
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             tocadorMusica = null;
         }
 
-        // 🔕 VERIFICAÇÃO: Se o usuário mutou as músicas nas configurações, não inicia o tocador
+        //VERIFICAÇÃO: Se o usuário mutou as músicas nas configurações, não inicia o tocador
         if (!isMusicaAtivada()) return;
 
         // Inicia a nova música escolhida
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // 💾 MÉTODOS DE CONTROLE DO SHAREDPREFERENCES (MÚSICA E EFEITOS INDEPENDENTES)
+    //MÉTODOS DE CONTROLE DO SHAREDPREFERENCES (MÚSICA E EFEITOS INDEPENDENTES)
 
     public boolean isMusicaAtivada() {
         SharedPreferences preferences = getSharedPreferences("ConfigTransicao", Context.MODE_PRIVATE);
