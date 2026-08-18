@@ -86,7 +86,7 @@ public class DialogTurnoFragment extends DialogFragment {
         btnRollDice.setEnabled(false);
         btnRollDice.setText("GIRANDO...");
 
-        // 🎲 DADO VIRTUAL: Dispara o som do SoundPool mapeado no Tabuleiro
+        //DADO VIRTUAL: Dispara o som do SoundPool mapeado no Tabuleiro
         dispararSomDoTabuleiro();
 
         // 1. Liga o loop da animação do dado 3D
@@ -114,7 +114,7 @@ public class DialogTurnoFragment extends DialogFragment {
         }, 1500);
     }
 
-    // ⚡ Envia o comando de áudio para o Tabuleiro apenas se o dado for virtual
+    // Envia o comando de áudio para o Tabuleiro apenas se o dado for virtual
     private void dispararSomDoTabuleiro() {
         if (getParentFragmentManager() != null) {
             Fragment tabuleiro = getParentFragmentManager().findFragmentById(R.id.fragment_container);
