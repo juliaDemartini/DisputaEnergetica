@@ -35,7 +35,7 @@ public class RankingFragment extends Fragment {
 
         exibirRankingGeral();
 
-        // ↩️ BOTÃO VOLTAR: Apenas remove o Ranking da tela e volta para o Tabuleiro
+        //BOTÃO VOLTAR: Apenas remove o Ranking da tela e volta para o Tabuleiro
         if (btnVoltarMenu != null) {
             btnVoltarMenu.setOnClickListener(v -> {
                 if (getParentFragmentManager() != null) {
@@ -44,7 +44,7 @@ public class RankingFragment extends Fragment {
             });
         }
 
-        // 🛑 BOTÃO FINALIZAR MODIFICADO: Pergunta se tem certeza e vai para a tela do vencedor
+        //BOTÃO FINALIZAR MODIFICADO: Pergunta se tem certeza e vai para a tela do vencedor
         if (btnFinalizarJogo != null) {
             btnFinalizarJogo.setOnClickListener(v -> {
 
@@ -53,7 +53,7 @@ public class RankingFragment extends Fragment {
                         .setMessage("Você tem certeza que deseja finalizar o jogo agora?")
                         .setPositiveButton("Sim, Finalizar", (dialog, which) -> {
 
-                            // 🔍 Captura quem está em primeiro lugar para mandar para a tela final
+                            //Captura quem está em primeiro lugar para mandar para a tela final
                             List<Jogador> listaOrdenada = new ArrayList<>(GameManager.getInstance().getListaJogadores());
 
                             // Ordena do maior para o menor score (igual você fez abaixo)
@@ -115,7 +115,7 @@ public class RankingFragment extends Fragment {
         }
     }
 
-    // 🎨 Método auxiliar para reverter o nome literal da cor para o Hex correspondente da tela final
+    //Método auxiliar para reverter o nome literal da cor para o Hex correspondente da tela final
     private String converterNomeCorParaHex(String nomeCor) {
         if (nomeCor == null) return "#FF2E2E";
         switch (nomeCor) {
