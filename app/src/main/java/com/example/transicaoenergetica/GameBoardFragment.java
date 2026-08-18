@@ -20,7 +20,7 @@ public class GameBoardFragment extends Fragment {
     private Button btnConcluirTurno, btnGoToRanking, btnEventSorte, btnEventEscolha;
     private LinearLayout llPlayersContainer;
 
-    // 🔊 Variáveis para o controle de efeitos sonoros curtos
+    //Variáveis para o controle de efeitos sonoros curtos
     private SoundPool soundPool;
     private int somDado, somRoleta, somWin, somFail;
 
@@ -33,7 +33,7 @@ public class GameBoardFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_game_board, container, false);
 
-        // 🔊 CONFIGURAÇÃO DO SOUNDPOOL (Carrega os efeitos leves na memória do celular)
+        //CONFIGURAÇÃO DO SOUNDPOOL (Carrega os efeitos leves na memória do celular)
         AudioAttributes attrs = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_GAME)
                 .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
@@ -92,14 +92,14 @@ public class GameBoardFragment extends Fragment {
                     .commit();
         });
 
-        // 🎰 ABA DA ROLETA: Apenas abre o diálogo (O som foi movido para o método público)
+        //ABA DA ROLETA: Apenas abre o diálogo (O som foi movido para o método público)
         Button btnTab2 = view.findViewById(R.id.btnTab2);
         btnTab2.setOnClickListener(v -> {
             DialogRoletaFragment dialogRoleta = new DialogRoletaFragment();
             dialogRoleta.show(getParentFragmentManager(), "PopUpRoleta");
         });
 
-        // 📊 ABA DO PLACAR
+        //ABA DO PLACAR
         Button btnTab1 = view.findViewById(R.id.btnTab1);
         btnTab1.setOnClickListener(v -> {
             PlacarDialogFragment dialogPlacar = new PlacarDialogFragment();
@@ -161,7 +161,7 @@ public class GameBoardFragment extends Fragment {
         }
     }
 
-    // 🎲 MÉTODOS PÚBLICOS DE ÁUDIO ATUALIZADOS: Agora eles respeitam as configurações da MainActivity!
+    //MÉTODOS PÚBLICOS DE ÁUDIO ATUALIZADOS: Agora eles respeitam as configurações da MainActivity!
 
     public void tocarSomDado() {
         if (getActivity() instanceof MainActivity && !((MainActivity) getActivity()).isEfeitosAtivados()) return;
