@@ -39,17 +39,17 @@ public class InstrucoesDialogFragment extends DialogFragment {
         Button btnBaixar = view.findViewById(R.id.btnBaixarPdf);
         Button btnManual = view.findViewById(R.id.btnVerManual);
 
-        // ❌ Ação do botão fechar (Ícone X)
+        //Ação do botão fechar (Ícone X)
         if (btnFechar != null) {
             btnFechar.setOnClickListener(v -> dismiss());
         }
 
-        // 📥 Ação do botão Baixar Tabuleiro (Offline + Menu de Salvamento)
+        //Ação do botão Baixar Tabuleiro (Offline + Menu de Salvamento)
         if (btnBaixar != null) {
             btnBaixar.setOnClickListener(v -> baixarECompartilharOffline("tabuleiro_imprimir.pdf", "Tabuleiro_Transicao_Energetica.pdf"));
         }
 
-        // 📄 Ação do botão Visualizar/Baixar Manual (Offline + Menu de Salvamento)
+        //Ação do botão Visualizar/Baixar Manual (Offline + Menu de Salvamento)
         if (btnManual != null) {
             btnManual.setOnClickListener(v -> baixarECompartilharOffline("manual.pdf", "Manual_Transicao_Energetica.pdf"));
         }
@@ -68,7 +68,7 @@ public class InstrucoesDialogFragment extends DialogFragment {
         }
     }
 
-    // 🔥 FUNÇÃO ADAPTADA: Extração interna e compartilhamento nativo 100% offline
+    //FUNÇÃO ADAPTADA: Extração interna e compartilhamento nativo 100% offline
     private void baixarECompartilharOffline(String nomeAsset, String nomeArquivoFinal) {
         Context context = getContext();
         if (context == null) return;
@@ -108,7 +108,7 @@ public class InstrucoesDialogFragment extends DialogFragment {
             intentCompartilhar.putExtra(Intent.EXTRA_STREAM, uriDoArquivo);
             intentCompartilhar.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            // 🚀 Abre a folha de opções nativa do Android na tela do usuário
+            //Abre a folha de opções nativa do Android na tela do usuário
             startActivity(Intent.createChooser(intentCompartilhar, "Salvar ou Enviar Ficheiro:"));
 
         } catch (Exception e) {
