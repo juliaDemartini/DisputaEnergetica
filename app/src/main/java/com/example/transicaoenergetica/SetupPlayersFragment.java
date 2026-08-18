@@ -20,12 +20,12 @@ import java.util.List;
 
 public class SetupPlayersFragment extends Fragment {
 
-    // 🎯 Elementos visuais dos novos Cards Customizáveis
+    //Elementos visuais dos novos Cards Customizáveis
     private CardView cardJogador1, cardJogador2, cardJogador3, cardJogador4;
     private TextView tvNomeJ1, tvNomeJ2, tvNomeJ3, tvNomeJ4;
     private ImageView ivPeaoJ1, ivPeaoJ2, ivPeaoJ3, ivPeaoJ4;
 
-    // 🎨 Variáveis dinâmicas para guardar as cores atuais (Hexadecimal) de cada um
+    //Variáveis dinâmicas para guardar as cores atuais (Hexadecimal) de cada um
     private String corJ1Hex = "#FF2E2E"; // Vermelho inicial
     private String corJ2Hex = "#2E7DFF"; // Azul inicial
     private String corJ3Hex = "#2EFF3A"; // Verde inicial
@@ -36,7 +36,7 @@ public class SetupPlayersFragment extends Fragment {
 
     private int qtdJogadoresAtivos = 2; // Começa por padrão com 2 jogadores ativos
 
-    // 🔊 Controle de efeitos sonoros curtos para a seleção
+    //Controle de efeitos sonoros curtos para a seleção
     private SoundPool soundPool;
     private int somClique, somPop;
 
@@ -49,7 +49,7 @@ public class SetupPlayersFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_setup_players, container, false);
 
-        // 🔊 CONFIGURAÇÃO DO SOUNDPOOL: Carrega os sons na memória
+        //CONFIGURAÇÃO DO SOUNDPOOL: Carrega os sons na memória
         AudioAttributes attrs = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_GAME)
                 .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
@@ -63,19 +63,19 @@ public class SetupPlayersFragment extends Fragment {
         somClique = soundPool.load(getContext(), R.raw.click, 1);
         somPop = soundPool.load(getContext(), R.raw.pop, 1);
 
-        // 🔍 Mapeamento dos Cards
+        //Mapeamento dos Cards
         cardJogador1 = view.findViewById(R.id.cardJogador1);
         cardJogador2 = view.findViewById(R.id.cardJogador2);
         cardJogador3 = view.findViewById(R.id.cardJogador3);
         cardJogador4 = view.findViewById(R.id.cardJogador4);
 
-        // 🔍 Mapeamento dos Textos dos Nomes
+        //Mapeamento dos Textos dos Nomes
         tvNomeJ1 = view.findViewById(R.id.tvNomeJ1);
         tvNomeJ2 = view.findViewById(R.id.tvNomeJ2);
         tvNomeJ3 = view.findViewById(R.id.tvNomeJ3);
         tvNomeJ4 = view.findViewById(R.id.tvNomeJ4);
 
-        // 🔍 Mapeamento das Imagens dos Peões
+        //Mapeamento das Imagens dos Peões
         ivPeaoJ1 = view.findViewById(R.id.ivPeaoJ1);
         ivPeaoJ2 = view.findViewById(R.id.ivPeaoJ2);
         ivPeaoJ3 = view.findViewById(R.id.ivPeaoJ3);
@@ -83,7 +83,7 @@ public class SetupPlayersFragment extends Fragment {
 
         switchDadoVirtual = view.findViewById(R.id.switchDado);
 
-        // 🔍 Vincula os botões seletores do topo e o de iniciar
+        //Vincula os botões seletores do topo e o de iniciar
         btnCount2 = view.findViewById(R.id.btnCount2);
         btnCount3 = view.findViewById(R.id.btnCount3);
         btnCount4 = view.findViewById(R.id.btnCount4);
@@ -97,7 +97,7 @@ public class SetupPlayersFragment extends Fragment {
         if (btnCount3 != null) btnCount3.setOnClickListener(v -> { tocarClique(); ajustarVisibilidadeCampos(3); });
         if (btnCount4 != null) btnCount4.setOnClickListener(v -> { tocarClique(); ajustarVisibilidadeCampos(4); });
 
-        // ✨ OUVINTES DE CLIQUE NOS CARDS: Abrem o pop-up de edição (com som de pop)
+        //OUVINTES DE CLIQUE NOS CARDS: Abrem o pop-up de edição (com som de pop)
         if (cardJogador1 != null) {
             cardJogador1.setOnClickListener(v -> {
                 tocarPop();
@@ -142,7 +142,7 @@ public class SetupPlayersFragment extends Fragment {
             });
         }
 
-        // 🟩 Ação de confirmar e enviar os dados tratados para a partida global
+        //Ação de confirmar e enviar os dados tratados para a partida global
         btnConfirmPlayers.setOnClickListener(v -> {
             tocarClique();
             List<Jogador> listaDaPartida = new ArrayList<>();
@@ -185,7 +185,7 @@ public class SetupPlayersFragment extends Fragment {
             // 1. Salva a partida globalmente na memória
             GameManager.getInstance().iniciarNovaPartida(listaDaPartida);
 
-            // 2. 🚀 EM VEZ DE IR PRO TABULEIRO, MOSTRA O POP-UP VERMELHO DE TENSÃO AQUI!
+            // 2.EM VEZ DE IR PRO TABULEIRO, MOSTRA O POP-UP VERMELHO DE TENSÃO AQUI!
             PreparadosDialogFragment popup = new PreparadosDialogFragment();
             popup.show(getParentFragmentManager(), "PreparadosPopUp");
         });
@@ -193,7 +193,7 @@ public class SetupPlayersFragment extends Fragment {
         return view;
     }
 
-    // 🪄 Métodos auxiliares de áudio rápidos
+    //Métodos auxiliares de áudio rápidos
     private void tocarClique() {
         if (soundPool != null) soundPool.play(somClique, 1.0f, 1.0f, 1, 0, 1.0f);
     }
@@ -202,13 +202,13 @@ public class SetupPlayersFragment extends Fragment {
         if (soundPool != null) soundPool.play(somPop, 1.0f, 1.0f, 1, 0, 1.0f);
     }
 
-    // 🪄 Método auxiliar para invocar o pop-up passando a interface de escuta
+    //Método auxiliar para invocar o pop-up passando a interface de escuta
     private void abrirPopUpEdicao(String nomeAtual, String corAtualHex, EditarJogadorDialogFragment.OnJogadorEditadoListener listener) {
         EditarJogadorDialogFragment dialog = EditarJogadorDialogFragment.newInstance(nomeAtual, corAtualHex, listener);
         dialog.show(getParentFragmentManager(), "EditarJogadorDialog");
     }
 
-    // 🎨 Traduz o código hexadecimal de volta para a String literal que sua classe Jogador espera
+    //Traduz o código hexadecimal de volta para a String literal que sua classe Jogador espera
     private String converterHexParaNomeCor(String hex) {
         switch (hex) {
             case "#FF2E2E": return "Vermelho";
@@ -219,7 +219,7 @@ public class SetupPlayersFragment extends Fragment {
         }
     }
 
-    // 🔄 Controla a exibição das linhas dos cards na tela de seleção
+    //Controla a exibição das linhas dos cards na tela de seleção
     private void ajustarVisibilidadeCampos(int quantidade) {
         this.qtdJogadoresAtivos = quantidade;
 
